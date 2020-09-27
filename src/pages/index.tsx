@@ -6,13 +6,11 @@ export default function Home() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Create Next App</title>
+                <title>rixcy.website</title>
             </Head>
 
             <main className={styles.main}>
-                <h1 className="text-4xl text-center">
-                    Welcome to <a href="https://nextjs.org">Next.js!</a>
-                </h1>
+                <h1 className="text-4xl text-center">Welcome to my website!</h1>
 
                 <ExampleComponent text="This is an example component." />
 
