@@ -1,50 +1,58 @@
+import { faGithub, faReact } from '@fortawesome/free-brands-svg-icons'
+import { faRocket } from '@fortawesome/free-solid-svg-icons'
 import Head from 'next/head'
-import { ExampleComponent } from '../components/ExampleComponent'
-import styles from '../styles/Home.module.css'
+import { Divider } from '../components/Divider'
+import { Hero } from '../components/Hero'
+import { IntroCard } from '../components/IntroCard'
+import { ProjectSection } from '../components/ProjectSection'
+import { UserSection } from '../components/UserSection'
+import { SimpleFooter } from '@rixcy/components'
 
 export default function Home() {
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <title>rixcy.website</title>
             </Head>
 
-            <main className={styles.main}>
-                <h1 className="text-4xl text-center">Welcome to my website!</h1>
+            <main>
+                <Hero />
+                <section className="bg-gray-300 -mt-24">
+                    <div className="container mx-auto px-4">
+                        <div className="flex flex-wrap">
+                            <IntroCard
+                                cardProps={{ className: 'pt-9 lg:pt-12' }}
+                                iconColour="gray-700"
+                                iconProps={{ icon: faReact }}
+                                title="Built using modern tools"
+                                content="All of the Rixcy projects are built using best in class tools such as React, TypeScript, TailwindCSS and more."
+                            />
 
-                <ExampleComponent text="This is an example component." />
+                            <IntroCard
+                                iconColour="gray-700"
+                                iconProps={{ icon: faGithub }}
+                                title="Open source"
+                                content="The code in Rixcy projects is licensed under the MIT license which is a permissive free software license. Stored on Github and easily accessible."
+                            />
 
-                <p className={styles.description}>
-                    Get started by editing <code className={styles.code}>pages/index.js</code>
-                </p>
+                            <IntroCard
+                                cardProps={{ className: 'pt-6' }}
+                                iconColour="gray-700"
+                                iconProps={{ icon: faRocket }}
+                                title="Performant"
+                                content="Rixcy projects are built with best practices in mind to make sure your projects can score high on lighthouse scores and other performance metrics."
+                            />
+                        </div>
+                    </div>
 
-                <div className={styles.grid}>
-                    <a href="https://nextjs.org/docs" className={styles.card}>
-                        <h3>Documentation &rarr;</h3>
-                        <p>Find in-depth information about Next.js features and API.</p>
-                    </a>
+                    <UserSection />
+                </section>
 
-                    <a href="https://nextjs.org/learn" className={styles.card}>
-                        <h3>Learn &rarr;</h3>
-                        <p>Learn about Next.js in an interactive course with quizzes!</p>
-                    </a>
-
-                    <a
-                        href="https://github.com/vercel/next.js/tree/master/examples"
-                        className={styles.card}
-                    >
-                        <h3>Examples &rarr;</h3>
-                        <p>Discover and deploy boilerplate example Next.js projects.</p>
-                    </a>
-
-                    <a
-                        href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        className={styles.card}
-                    >
-                        <h3>Deploy &rarr;</h3>
-                        <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-                    </a>
-                </div>
+                <section className="pb-20 relative block bg-gray-900">
+                    <Divider colour="gray-900" />
+                    <ProjectSection />
+                    <SimpleFooter />
+                </section>
             </main>
         </div>
     )
