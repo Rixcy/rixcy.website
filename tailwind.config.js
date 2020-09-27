@@ -3,8 +3,13 @@ module.exports = {
         removeDeprecatedGapUtilities: true,
         purgeLayersByDefault: true,
     },
-    purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
-    theme: {},
+    purge: false,
+    theme: {
+        fontFamily: {
+            title: ['Lato', 'sans-serif'],
+            body: ['Lato', 'sans-serif'],
+        },
+    },
     variants: {},
     plugins: [],
 }
